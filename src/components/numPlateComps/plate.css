@@ -1,0 +1,20 @@
+/* Scrollbar için özel stiller */
+::-webkit-scrollbar {
+    width: 12px; /* Kaydırma çubuğu genişliği */
+    
+  }
+  
+  /* Kaydırma çubuğu rengi */
+  ::-webkit-scrollbar-thumb {
+    background-color: #1458a4; /* Özel arka plan rengi */
+    border-radius: 0px; /* Köşe yarıçapı */
+  }
+  
+  /* Kaydırma çubuğu yolu (arkaplanı) rengi */
+  ::-webkit-scrollbar-track {
+    background-color: #130e0e;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background-color: #0f0d0d00; /* Köşe yarıçapı rengi */
+  }
