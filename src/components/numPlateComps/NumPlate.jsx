@@ -7,21 +7,20 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import FilterComp from '../mapComps/FilterComp'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { setCurrentLoc } from '../../redux/features/location/currentLocSlice'
+
 
 function NumPlate() {
     const dispatch = useDispatch()
-    const filteredUsers = useSelector((state) => state.filteredUsers)
     const filter = useSelector((state) => state.filter)
     const [filterSearch, setFilterSearch] = useState("")
     const [filterPlate, setFilterPlate] = useState([])
-    const [push, setPush] = useState()
     const user = useSelector(state => state.user)
+   
 
     const handleChange = (e) => {
         setFilterSearch(e.target.value)
     }
-
-
     useEffect(() => {
         const filteredUsers = [];
         for (let index = 0; index < user.length; index++) {
@@ -44,11 +43,6 @@ function NumPlate() {
         dispatch(setLoading(false))
     }, [filter, filterSearch])
 
-    //console.log(filterPlate, useSelector(state=> state.locat), "filtreleneen ")
-
-
-   
-
 
     return (
         <div className='text-white h-full w-[70%] flex justify-center mx-4 '>
@@ -69,7 +63,7 @@ function NumPlate() {
                 <div className='grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-4 gap-y-8 h-[100%] overflow-scroll px-2 mt-12 '>
                     {
                         filterPlate.map((plate, i) => (
-                            <button key={i} onClick={() => dispatch(setLocation(plate.location))}><Plate plate={plate.plate} /></button>
+                            <button key={i} onClick={() => dispatch(setCurrentLoc([plate.location[0],plate.location[1]])) }> {plate.location[0]} {plate.location[1]}<Plate plate={plate.plate} /></button>
                         ))
                     }
                 </div>

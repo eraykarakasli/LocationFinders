@@ -4,6 +4,7 @@ import locationReducer from '../features/location/locationSlice'
 import userReducer from '../features/users/userSlice'
 import filterReducer from '../features/location/filterSlice'
 import apiReducer from '../features/api/apiSlice'
+import currentLocReducer from '../features/location/currentLocSlice'
 
 
 export const store = configureStore({
@@ -13,5 +14,6 @@ export const store = configureStore({
     user: userReducer,
     filter: filterReducer,
     api: apiReducer,
+    current: currentLocReducer,
   },
 })
