@@ -11,7 +11,7 @@ import LogReg from "./pages/LoginRegister.jsx/LogReg";
 
 function App() {
   return (
-    <div className="bg-gradient-to-t from-blue-700 via-blue-800 to-gray-900 h-full ">
+    <div className="bg-gradient-to-t from-white via-blue-800 to-gray-900 h-full w-full ">
 
       <Navbar />
       <PageWrapper>

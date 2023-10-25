@@ -20,11 +20,9 @@ function FilterComp() {
         setFilters({ ...filters, town: event.target.value });
         dispatch(setTownFilter(event.target.value));
     };
-
-
-    //console.log(filters.town, filters.vehicle)
+    
     return (
-        <div className='flex gap-5 h-14 '>
+        <div className='flex gap-5 h-14 w-auto'>
             <Box className="bg-white rounded-md w-1/2" sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
                     <InputLabel  id="demo-simple-select-label">Town</InputLabel>

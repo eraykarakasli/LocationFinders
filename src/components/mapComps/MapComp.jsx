@@ -3,7 +3,6 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react';
 
-
 function MapComp() {
   const { filteredUsers, loading } = useSelector((state) => state.locat)
   const api = useSelector((state) => state.api)
@@ -28,9 +27,8 @@ function MapComp() {
     setNewLocat(newLocations)
   }, [loading, filteredUsers])
 
-
   return (
-    <div className=' w-[90%]   max-w-[70%]  text-white bg-gray h-[80%]  mr-10'>
+    <div className='w-auto  text-white bg-gray md:ml-20 md:h-[450px] lg:h-[650px] 2xl:h-[750px] pb-10 mr-10'>
       <div className='flex justify-between'>
         <div className='flex gap-3'>
           <span className='text-md font-semibold'>Current Location:</span>
@@ -48,21 +46,15 @@ function MapComp() {
           mapContainerStyle={mapStyles}
           zoom={zoom}
           center={{ lat: current.currentLoc[0], lng: current.currentLoc[1] }}>
-          {
-            newLocat?.map((user, i) => (
-              //
+          { newLocat?.map((user, i) => (
               <Marker key={i}
                 position={{ lat: user.location[0], lng: user.location[1] }}
                 icon={{
-                  url: `${user.vehicle == "otobus" && "../../../public/blue-bus.png" || user.vehicle == "servis" && "../../../public/yellow-bus.png" || user.vehicle == "minibus" && "../../../public/green-bus.png"}`,
-
-                }}
-              />
-            ))
-          }
+                  url: `${user.vehicle == "otobus" && "../../../public/blue-bus.png" 
+                  || user.vehicle == "servis" && "../../../public/yellow-bus.png" 
+                  || user.vehicle == "minibus" && "../../../public/green-bus.png"}`}}/>))}
         </GoogleMap>
       </LoadScript>
-
     </div >
   )
 }
