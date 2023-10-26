@@ -3,11 +3,14 @@ import Plate from '../components/numPlateComps/Plate'
 import { useSelector, useDispatch } from 'react-redux'
 
 function Plates() {
-    const plates = useSelector((state)=> state.user)
-    
-    
+    const plates = useSelector((state) => state.user)
+
+
     return (
         <div className='h-auto min-h-screen '>
+            <div className='text-white font-semibold flex gap-2 justify-center items-center bg-black bg-opacity-30 p-4 px-8'>
+                <a className='hover:text-red-600 duration-500' href="/">Anasayfa</a> &#x276F; <p className='text-red-600 '>Araçlar</p>
+            </div>
             <div className='p-10 grid gap-6 overflow-auto xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 '>
                 {
                     plates.map((plate, i) => (

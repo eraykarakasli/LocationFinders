@@ -8,11 +8,13 @@ import FilterComp from '../mapComps/FilterComp'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { setCurrentLoc } from '../../redux/features/location/currentLocSlice'
+import Buttons from '../comps/Buttons'
 
 function NumPlate() {
     const dispatch = useDispatch()
     const filter = useSelector((state) => state.filter)
     const [filterSearch, setFilterSearch] = useState("")
+    const [plate, setPlate] = useState(false)
     const [filterPlate, setFilterPlate] = useState([])
     const user = useSelector(state => state.user)
 
@@ -42,31 +44,49 @@ function NumPlate() {
     }, [filter, filterSearch])
 
     return (
-        <div className='text-white h-auto w-auto flex justify-center  mx-4 '>
-            <div className='h-auto w-auto '>
-                <div className='flex gap-5 justify-between'>
-                    <div className='w-auto'>
-                        <FilterComp />
-                    </div>
-                    <div className='flex items-center rounded-lg bg-white  w-auto '>
-                        <input
-                            onChange={handleChange}
-                            className='w-full h-12 p-4 rounded-lg text-black outline-none  '
-                            type="text"
-                            placeholder='Arama Yapınız...'
-                            value={filterSearch} />
-                        <AiOutlineSearch color='black' size={28}/>
-                    </div>
-                </div>
-                <div className='max-h-[750px] grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  md:h-[450px] lg:h-[650px] 2xl:h-[750px] gap-4 gap-y-8 h-[98%] overflow-scroll px-2 mt-5 '>
-                    {filterPlate.map((plate, i) => (
-                        <button
-                            key={i}
-                            onClick={() => dispatch(setCurrentLoc([plate.location[0], plate.location[1]]))}>
-                            <Plate plate={plate.plate} />
-                        </button>))}
-                </div>
+        <div className=''>
+            <div className='flex items-center pl-20 h-12 max-[430px]:pl-28  w-full ' onClick={()=> setPlate(!plate)}>
+                <button className='text-gray-300 font-semibold border border-gray-400 hover:text-red-600 hover:border-red-600 duration-500 p-2 rounded-lg'>Araçları Görüntüle</button>
             </div>
+            
+            {plate &&
+                <div>
+                    <div className='text-white  pt-5  flex justify-center bg-[#232323] bg-opacity-80 h-screen'>
+
+                        <div className=' w-96 '>
+                            <div className='gap-5 justify-between px-4 '>
+                                <div className='w-auto '>
+                                    <FilterComp />
+                                </div>
+                                <div className='flex items-center rounded-lg bg-[#232323] bg-opacity-40  w-auto mt-2 border border-gray-400'>
+                                    <input
+                                        onChange={handleChange}
+                                        className='w-full  h-12 p-4 rounded-lg text-white outline-none placeholder:text-white bg-[#626263] bg-opacity-20'
+                                        type="text"
+                                        placeholder='Arama Yapınız...'
+                                        value={filterSearch} />
+                                    <AiOutlineSearch color='white' size={28} />
+                                </div>
+                            </div>
+                            <div className='px-10 grid md:grid-cols-1 max-h-[90%]  gap-4 gap-y-8 h-[80%] overflow-scroll mt-5 '>
+                                {filterPlate.map((plate, i) => (
+                                    <button
+                                        key={i}
+                                        onClick={() => (dispatch(setCurrentLoc([plate.location[0], plate.location[1]])), setPlate(false))}>
+                                        <Plate plate={plate.plate} />
+                                    </button>))}
+                                    {filterPlate.map((plate, i) => (
+                                    <button
+                                        key={i}
+                                        onClick={() => dispatch(setCurrentLoc([plate.location[0], plate.location[1]]))}>
+                                        <Plate plate={plate.plate} />
+                                    </button>))}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                }
         </div>
     )
 }

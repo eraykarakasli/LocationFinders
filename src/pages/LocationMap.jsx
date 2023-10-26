@@ -4,18 +4,15 @@ import MapComp from '../components/mapComps/MapComp'
 
 function LocationMap() {
   return (
-    <div className=' h-[1500px]  justify-between w-full pt-6  flex gap-10 '>
-      <div className='w-full flex max-h-[850px]'>
-        <div className='w-2/5'>
+    <div className='h-screen  w-full   flex'>
+      <div className='w-full  relative'>
+        <div className=' absolute z-10  h-screen '>
           <NumPlate />
         </div>
-        <div className='w-3/5'>
+        <div className=''>
           <MapComp />
         </div>
       </div>
-
-
-
     </div>
   )
 }

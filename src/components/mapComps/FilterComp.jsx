@@ -22,27 +22,28 @@ function FilterComp() {
     };
     
     return (
-        <div className='flex gap-5 h-14 w-auto'>
-            <Box className="bg-white rounded-md w-1/2" sx={{ minWidth: 120 }}>
+        <div className='flex gap-5 h-14 w-auto '>
+            <Box className=" bg-[#232323] bg-opacity-40 border border-gray-400  rounded-md w-1/2 " sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
-                    <InputLabel  id="demo-simple-select-label">Town</InputLabel>
+                    <InputLabel id="demo-simple-select-label"><span className='text-white'>İlçe</span></InputLabel>
                     <Select
+                        className='text-white'
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         value={filters.town}
                         label="Town"
                         onChange={townChange}
                     >
-                        <MenuItem value={"hepsi"}>Hepsi</MenuItem>
+                        <MenuItem className='bg-gray-400' value={"hepsi"}>Hepsi</MenuItem>
                         <MenuItem value={"kadikoy"}>Kadıköy</MenuItem>
                         <MenuItem value={"beylikduzu"}>beylikdüzü</MenuItem>
                         <MenuItem value={"esenyurt"}>esenyurt</MenuItem>
                     </Select>
                 </FormControl>
             </Box>
-            <Box className="bg-white rounded-md w-1/2" sx={{ minWidth: 120 }}>
+            <Box className="bg-[#232323] bg-opacity-40 border border-gray-400 rounded-md w-1/2" sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
-                    <InputLabel className='text-white' id="demo-simple-select-label">Vehicle</InputLabel>
+                    <InputLabel className='text-white' id="demo-simple-select-label"><span className='text-white'>Araç</span></InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
