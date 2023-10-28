@@ -9,10 +9,13 @@ import { motion } from "framer-motion"
 function LoginPage() {
     const { pathname } = useLocation();
     const [status, setStatus] = useState(true)
+
     useEffect(() => {
         if (pathname === "/register") {
+            document.title = 'Kayıt Ol - LocationFinder';
             setStatus(true)
         } else if (pathname === "/login") {
+            document.title = 'Giriş Yap - LocationFinder';
             setStatus(false)
         }
     })

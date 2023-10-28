@@ -27,7 +27,7 @@ function NavRight() {
                         <div className='grid place-items-start mt-6'>
                             <a href="/" className="flex text-red-500   py-2">Anasayfa</a>
                             <a href="/locationmap" className="flex hover:text-red-500   py-2">Aracım Nerede ?</a>
-                            <a href='/plates' className="flex hover:text-red-500   py-2">Sürücüler</a>
+                            <a href='/plates' className="flex hover:text-red-500   py-2">Araçlar</a>
                             <a href='/login' className="flex hover:text-red-500   py-2">Giriş yap</a>
                             <a href='/register' className="flex hover:text-red-500   py-2">Kayıt Ol</a>
 
@@ -61,7 +61,7 @@ function NavRight() {
                         <a href="" className="block px-4 py-4 hover:bg-gray-800 hover:text-white">KABE</a>
                     </div>
                 </div> */}
-                <a href='/plates' className="flex hover:text-red-500 duration-500  py-2">Sürücüler</a>
+                <a href='/plates' className="flex hover:text-red-500 duration-500  py-2">Araçlar</a>
                 <a className='hover:text-red-500 duration-500' href="/contact">İletişim</a>
                 <div className='flex gap-3'>
                     <a href='/login' className="flex hover:text-red-500 duration-500  py-2">Giriş yap</a>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, InfoWindow, LoadScript, Marker } from '@react-google-maps/api';
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react';
 
@@ -8,6 +8,7 @@ function MapComp() {
   const api = useSelector((state) => state.api)
   const [zoom, setZoom] = useState(17)
   const [newLocat, setNewLocat] = useState([])
+  const [selectedMarker, setSelectedMarker] = useState(null)
   const current = useSelector((state) => state.current)
 
   const mapStyles = {
@@ -17,6 +18,7 @@ function MapComp() {
   const eventHandler = (xzoom) => {
     setZoom(xzoom)
   }
+
   useEffect(() => {
     const newLocations = []
     if (!loading) {
@@ -27,6 +29,7 @@ function MapComp() {
     setNewLocat(newLocations)
   }, [loading, filteredUsers])
 
+  console.log(selectedMarker)
   return (
     <div className='w-full  text-white bg-[#0D0D0D] h-screen'>
       <div className='flex h-12 items-center justify-between pr-4 '>
@@ -49,20 +52,38 @@ function MapComp() {
       </div>
       <LoadScript googleMapsApiKey={api.api}>
         <GoogleMap
+          onClick={() => setSelectedMarker(null)}
           options={{
             mapTypeControl: false,
           }}
           mapContainerStyle={mapStyles}
           zoom={zoom}
           center={{ lat: current.currentLoc[0], lng: current.currentLoc[1] }}>
+
           {newLocat?.map((user, i) => (
-            <Marker onClick={{}} key={i}
+            <Marker
+              onClick={() => setSelectedMarker(user)}
+              key={i}
               position={{ lat: user.location[0], lng: user.location[1] }}
               icon={{
                 url: `${user.vehicle == "otobus" && "../../../public/blue-bus.png"
                   || user.vehicle == "servis" && "../../../public/yellow-bus.png"
                   || user.vehicle == "minibus" && "../../../public/green-bus.png"}`
-              }} />))}
+              }} >
+              {selectedMarker === user &&
+                <InfoWindow
+                  onCloseClick={() => setSelectedMarker(null)}
+                  position={{ lat: user.location[0], lng: user.location[1] }} >
+                  <div className='text-xl text-black font-semibold '>
+                    <div>Şoför: <span className='text-red-700 text-lg'>{user.name} </span></div>
+                    <div> Tel.No: <span className='text-red-700 text-lg'>{user.phone} </span></div>
+                    <div> Plaka: <span className='text-red-700 text-lg'>{user.plate} </span></div>
+                  </div>
+                </InfoWindow>
+              }
+            </Marker>
+          ))}
+
         </GoogleMap>
       </LoadScript>
     </div >

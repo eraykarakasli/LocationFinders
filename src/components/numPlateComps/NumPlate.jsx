@@ -42,7 +42,7 @@ function NumPlate() {
         dispatch(setLocation(filteredUsers))
         dispatch(setLoading(false))
     }, [filter, filterSearch])
-
+    console.log(filterPlate)
     return (
         <div className=''>
             <div className='flex items-center pl-20 h-12 max-[430px]:pl-28  w-full ' onClick={()=> setPlate(!plate)}>
@@ -73,13 +73,7 @@ function NumPlate() {
                                     <button
                                         key={i}
                                         onClick={() => (dispatch(setCurrentLoc([plate.location[0], plate.location[1]])), setPlate(false))}>
-                                        <Plate plate={plate.plate} />
-                                    </button>))}
-                                    {filterPlate.map((plate, i) => (
-                                    <button
-                                        key={i}
-                                        onClick={() => dispatch(setCurrentLoc([plate.location[0], plate.location[1]]))}>
-                                        <Plate plate={plate.plate} />
+                                        <Plate plate={plate.plate} name={plate.name} phone={plate.phone} />
                                     </button>))}
                             </div>
 

@@ -5,6 +5,7 @@ import { TbStairsDown } from 'react-icons/tb'
 import Plate from '../components/numPlateComps/Plate';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from 'react';
 
 function Passenger() {
     const { id } = useParams()
@@ -20,7 +21,9 @@ function Passenger() {
     }
    // console.log(thirdSeats)
 
-
+   useEffect(() => {
+    document.title = 'Yolcular - LocationFinder';
+  }, []);
 
     return (
         <div className='h-screen w-[100%] '>
