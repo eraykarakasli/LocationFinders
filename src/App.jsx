@@ -10,10 +10,18 @@ import LoginPage from "./pages/LoginRegister.jsx/LoginPage";
 import LogReg from "./pages/LoginRegister.jsx/LogReg";
 import Footer from "./components/footer/Footer";
 import Contact from "./pages/Contact";
+import { useSelector } from "react-redux";
+import Admin from "./pages/admin/Admin";
+import AdminAdd from "./pages/admin/AdminAdd";
+import AdminList from "./pages/admin/AdminList";
+import AdminUpdate from "./pages/admin/AdminUpdate";
 
 function App() {
+  const theme = useSelector(state => state.theme)
+
   return (
-    <div className="bg-[#121212] min-h-screen h-full w-full ">
+    
+    <div className={`${theme ? "bg-black" : "bg-white"}  min-h-screen h-full w-full `}>
 
       {/* <Navbar /> */}
       <NewBar />
@@ -27,9 +35,15 @@ function App() {
           <Route path="/login" element={<LogReg />} />
           <Route path="/register" element={<LogReg />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/add" element={<AdminAdd />} />
+          <Route path="/admin/list" element={<AdminList />} />
+          <Route path="/admin/list" element={<AdminList />} />
+          <Route path="/admin/update" element={<AdminUpdate />} />
+          
         </Routes>
       </Router>
-      <div>
+      <div className=" ">
         <Footer />
       </div>
 

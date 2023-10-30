@@ -37,7 +37,7 @@ function FormContact() {
                 {({ values, errors, handleSubmit, handleReset, handleChange, dirty, isSubmitting, touched }) => (
                     <form
                         onSubmit={handleSubmit}
-                        className='  -mt-8 shadow-xl  '
+                        className='-mt-8 '
                     >
                         <div className=' text-xl font-bold pt-7 text-white'>BİZİMLE İLETİŞİME GEÇ</div>
                         <p className='text-gray-400'>Merak ettiklerinizi, görüş ve önerilerinizi aşağıdaki formu doldurarak bize iletebilirsiniz.</p>

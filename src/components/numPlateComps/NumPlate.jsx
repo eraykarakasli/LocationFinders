@@ -8,7 +8,6 @@ import FilterComp from '../mapComps/FilterComp'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { setCurrentLoc } from '../../redux/features/location/currentLocSlice'
-import Buttons from '../comps/Buttons'
 
 function NumPlate() {
     const dispatch = useDispatch()
@@ -46,7 +45,7 @@ function NumPlate() {
     return (
         <div className=''>
             <div className='flex items-center pl-20 h-12 max-[430px]:pl-28  w-full ' onClick={()=> setPlate(!plate)}>
-                <button className='text-gray-300 font-semibold border border-gray-400 hover:text-red-600 hover:border-red-600 duration-500 p-2 rounded-lg'>Araçları Görüntüle</button>
+                <button className='text-gray-200 font-semibold border border-gray-400 hover:text-red-600 hover:border-red-600 duration-500 p-2 rounded-lg'>Araçları Görüntüle</button>
             </div>
             
             {plate &&

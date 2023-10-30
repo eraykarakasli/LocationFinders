@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { AiOutlineDown } from 'react-icons/ai'
 
 
 function NavRight() {
@@ -63,9 +62,10 @@ function NavRight() {
                 </div> */}
                 <a href='/plates' className="flex hover:text-red-500 duration-500  py-2">Araçlar</a>
                 <a className='hover:text-red-500 duration-500' href="/contact">İletişim</a>
+                
                 <div className='flex gap-3'>
                     <a href='/login' className="flex hover:text-red-500 duration-500  py-2">Giriş yap</a>
-                    <a href='/register' className="flex text-gray-300 font-semibold border duration-500 border-gray-400 hover:text-red-600 hover:border-red-600 p-2 rounded-lg  py-2">Kayıt Ol</a>
+                    <a href='/register' className="flex text-gray-400 font-semibold border duration-500 border-gray-400 hover:text-red-600 hover:border-red-600 p-2 rounded-lg  py-2">Kayıt Ol</a>
                 </div>
 
             </div>

@@ -11,6 +11,7 @@ function LoginPage() {
     const [status, setStatus] = useState(true)
 
 
+
     useEffect(() => {
         if (pathname === "/register") {
             document.title = 'Kayıt Ol - LocationFinder';
@@ -28,7 +29,7 @@ function LoginPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.0 }}
                 className='flex'>
-                <div className="bg-[url('https://d31l02nbp0owar.cloudfront.net/m/s/24809/24799868/a-0108.png')] hidden xl:block   mt-4  rounded-e-none rounded-2xl w-[550px] p-8 shadow-2xl h-[850px]">
+                <div className="bg-[url('https://d31l02nbp0owar.cloudfront.net/m/s/24809/24799868/a-0108.png')] hidden xl:block   mt-4  rounded-e-none rounded-2xl w-[550px] p-8 h-[850px]">
                     <div className='h-full w-full flex items-center justify-center'>
                         <img className='h-[450px] w-[450px]' src="https://i.giphy.com/media/WQZpXz8Y8eKgGIxrSP/giphy.webp" alt="deneme" />
 

@@ -13,7 +13,7 @@ function LocationMap() {
         <div className=' absolute z-10  h-screen '>
           <NumPlate />
         </div>
-        <div className=''>
+        <div className='bg-black bg-opacity-30'>
           <MapComp />
         </div>
       </div>

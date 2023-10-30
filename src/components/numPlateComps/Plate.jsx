@@ -6,15 +6,15 @@ function Plate(props) {
             <div className='w-full flex h-full '>
                 <div className='bg-gray-300 rounded-md text-lg  text-black  h-auto w-[100%]  font-extrabold gap-2 text-[12px] '>
 
-                    <div className='h-1/3'>
+                    <div className='h-1/3 flex justify-center'>
                         <span>{props.name} </span>
                     </div>
 
-                    <div className='h-1/3'>
+                    <div className='h-1/3 flex justify-center'>
                         <span>{props.plate}</span>
                     </div>
 
-                    <div className='h-1/3 '>
+                    <div className='h-1/3 flex justify-center'>
                         <span>{props.phone}</span>
                     </div>
                 </div>
