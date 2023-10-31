@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 
 
 function NavRight() {
+
+    const theme = useSelector(state => state.theme)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -21,28 +24,15 @@ function NavRight() {
                     ☰
                 </button>
                 {isDropdownOpen && (
-                    <div className="absolute z-20 h-screen bg-black  w-full left-0  rounded-md shadow-md py-8 px-5">
+                    <div className={`${theme ? " bg-black text-white" : "bg-white text-black"} absolute z-20 h-screen   w-full left-0 top-20 rounded-md shadow-md py-8 px-5`}>
 
                         <div className='grid place-items-start mt-6'>
                             <a href="/" className="flex text-red-500   py-2">Anasayfa</a>
                             <a href="/locationmap" className="flex hover:text-red-500   py-2">Aracım Nerede ?</a>
                             <a href='/plates' className="flex hover:text-red-500   py-2">Araçlar</a>
+                            <a href="/contact" className="flex hover:text-red-500  py-2">İletişim</a>
                             <a href='/login' className="flex hover:text-red-500   py-2">Giriş yap</a>
                             <a href='/register' className="flex hover:text-red-500   py-2">Kayıt Ol</a>
-
-
-                            {/* <button onClick={toggleMenu} className='flex hover:text-red-500  py-2  items-center gap-20' ><a onClick={()=>navigate('/karavanlar')} href="">KARAVANLAR </a>{isOpen ? <AiOutlineDown className='rotate-180'/> : <AiOutlineDown/> }</button>
-                            {isOpen && (
-                            <div className=" ">
-                                <a  href="" className="block hover:text-red-600  py-2">Brüstner</a>
-                                <a  href="" className="block hover:text-red-600  py-2">Fendt - Caravan</a>
-                                <a  href="" className="block hover:text-red-600  py-2">Hymer / Eriba</a>
-                                <a href="" className="block hover:text-red-600  py-2">KABE</a>
-                            </div>
-                            )} */}
-
-
-                            <a href="/contact" className="flex hover:text-red-500  py-2">İletişim</a>
                         </div>
                     </div>
                 )}
@@ -62,7 +52,7 @@ function NavRight() {
                 </div> */}
                 <a href='/plates' className="flex hover:text-red-500 duration-500  py-2">Araçlar</a>
                 <a className='hover:text-red-500 duration-500' href="/contact">İletişim</a>
-                
+
                 <div className='flex gap-3'>
                     <a href='/login' className="flex hover:text-red-500 duration-500  py-2">Giriş yap</a>
                     <a href='/register' className="flex text-gray-400 font-semibold border duration-500 border-gray-400 hover:text-red-600 hover:border-red-600 p-2 rounded-lg  py-2">Kayıt Ol</a>

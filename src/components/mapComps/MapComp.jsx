@@ -35,10 +35,11 @@ function MapComp() {
     <div className='w-full  text-white  h-screen'>
       <div className='flex h-12 items-center justify-between pr-4 '>
 
-        <div className='flex justify-end w-full max-[430px]:hidden '>
+        <div className='flex gap-16 justify-end w-full max-[430px]:hidden '>
           <div className='w-1/3 '> </div>
           <div className='w-1/3 text-white pl-32 font-semibold flex gap-2   justify-center items-center   px-8'>
-            <a className='hover:text-red-600 duration-500' href="/">Anasayfa</a> &#x276F; <p className='text-red-600 '>Aracım Nerede?</p>
+            <a className='hover:text-red-600 duration-500' href="/">Anasayfa</a> &#x276F; 
+            <p className='text-red-600 '>Aracım Nerede?</p>
           </div>
 
           <div className=' flex gap-3 h-10 mb-1 pr-16 w-1/3 justify-end font-semibold text-gray-300 '>

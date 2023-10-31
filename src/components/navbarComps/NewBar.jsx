@@ -10,7 +10,7 @@ function Navbar() {
     return (
         <>
             <div className='border-b border-red-600'>
-                <div className={` ${theme ? "bg-black " : " bg-white "}flex  z-30   justify-between h-20 px-20 items-center w-full `} >
+                <div className={` ${theme ? "bg-black " : " bg-white "} flex gap-4  z-30   justify-between h-20 px-20 items-center w-full `} >
                     <NavLeft />
                     <NavRight />
                 </div>

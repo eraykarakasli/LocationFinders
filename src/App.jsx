@@ -38,7 +38,6 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/add" element={<AdminAdd />} />
           <Route path="/admin/list" element={<AdminList />} />
-          <Route path="/admin/list" element={<AdminList />} />
           <Route path="/admin/update" element={<AdminUpdate />} />
           
         </Routes>
