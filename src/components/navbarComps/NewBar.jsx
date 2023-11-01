@@ -6,11 +6,11 @@ import { useSelector } from 'react-redux';
 
 function Navbar() {
     const theme = useSelector(state => state.theme)
-    console.log(theme, "theme")
+    
     return (
         <>
             <div className='border-b border-red-600'>
-                <div className={` ${theme ? "bg-black " : " bg-white "} flex gap-4  z-30   justify-between h-20 px-20 items-center w-full `} >
+                <div className={` ${theme ? "bg-gradient-to-r from-[#00ffdc] via-[#373744] to-[#1d5bbf] " : " bg-gradient-to-r from-[#ff0000] via-[#374344] to-[1d35bf]  "} flex gap-4  z-30   justify-between h-20 px-20 items-center w-full `} >
                     <NavLeft />
                     <NavRight />
                 </div>

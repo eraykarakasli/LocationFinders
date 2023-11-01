@@ -35,12 +35,12 @@ function AdminAdd() {
             <Aside />
             <div className='w-full flex justify-center'>
                 <div className='w-[70%]  grid md:grid-cols-1 lg:grid-cols-2 '>
-                    <div className='grid-cols-1 max-w-[450px] grid h-80 w-[70%] placeholder:text-red-600 mt-10 '>
-                        <input className='border border-red-600 bg-transparent outline-none rounded-xl my-2 placeholder:text-red-600 text-red-600 pl-4' type="text" name="name" value={user.name} onChange={handleChange} placeholder="Name" />
-                        <input className='border border-red-600 bg-transparent outline-none rounded-xl my-2 placeholder:text-red-600 text-red-600 pl-4' type="text" name="plate" value={user.plate} onChange={handleChange} placeholder="Plate" />
-                        <input className='border border-red-600 bg-transparent outline-none rounded-xl my-2 placeholder:text-red-600 text-red-600 pl-4' type="text" name="phone" value={user.phone} onChange={handleChange} placeholder="Phone" />
-                        <input className='border border-red-600 bg-transparent outline-none rounded-xl my-2 placeholder:text-red-600 text-red-600 pl-4' type="text" name="vehicle" value={user.vehicle} onChange={handleChange} placeholder="Vehicle" />
-                        <button className='border border-red-600 bg-red-600 hover:bg-transparent rounded-xl my-2 outline-none text-gray-100 font-bold hover:text-red-600 duration-300' onClick={handleAddUser}>Add</button>
+                    <div className='grid-cols-1 max-w-[450px] grid h-80 w-[70%] placeholder:text-white mt-10 '>
+                        <input className='border border-white bg-transparent outline-none rounded-xl my-2 placeholder:text-white text-red-600 pl-4' type="text" name="name" value={user.name} onChange={handleChange} placeholder="Name" />
+                        <input className='border border-white bg-transparent outline-none rounded-xl my-2 placeholder:text-white text-red-600 pl-4' type="text" name="plate" value={user.plate} onChange={handleChange} placeholder="Plate" />
+                        <input className='border border-white bg-transparent outline-none rounded-xl my-2 placeholder:text-white text-red-600 pl-4' type="text" name="phone" value={user.phone} onChange={handleChange} placeholder="Phone" />
+                        <input className='border border-white bg-transparent outline-none rounded-xl my-2 placeholder:text-white text-red-600 pl-4' type="text" name="vehicle" value={user.vehicle} onChange={handleChange} placeholder="Vehicle" />
+                        <button className='border border-white bg-red-600 hover:bg-transparent rounded-xl my-2 outline-none text-gray-100 font-bold hover:text-red-600 duration-300' onClick={handleAddUser}>Add</button>
                     </div>
 
                     <div className='w-full'>

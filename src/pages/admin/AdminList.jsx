@@ -77,11 +77,11 @@ function AdminList() {
     };
     return (
         <div className='min-h-screen'>
-            <div className=''>
+            <div className='mb-2'>
                 <Aside />
             </div>
             <div className='flex justify-center w-full '>
-                <Box sx={{ height: 1000, width: '80%', display: "flex", justifyContent: "center" }}>
+                <Box  sx={{ height: 1000, width: '80%', display: "flex", justifyContent: "center", color:"red", }}>
                     <DataGrid 
                     style={{color: `${theme ? 'white' : 'black'}`}}
                         rows={rows}

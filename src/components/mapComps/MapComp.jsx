@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react';
 
 function MapComp() {
+  
 
   const { filteredUsers, loading } = useSelector((state) => state.locat)
   const api = useSelector((state) => state.api)

@@ -64,19 +64,19 @@ function LoginPage() {
                                 onSubmit={handleSubmit}
                                 className='mx-auto mt-4  rounded-s-none rounded-2xl w-[350px] md:w-[500px]  p-8 shadow-2xl min-h-[850px]'
                             >
-                                <div className='text-gray-400 justify-center flex text-3xl font-bold pt-7'>{status ? "Kayıt Ol" : "Giriş Yap"}</div>
+                                <div className='text-gray-100 justify-center flex text-3xl font-bold pt-7'>{status ? "Kayıt Ol" : "Giriş Yap"}</div>
 
                                 <input
                                     id='email'
                                     type="text"
                                     placeholder='E-posta...'
-                                    className='border w-full h-12 mt-12 shadow-lg p-2 bg-transparent text-gray-300 rounded-md'
+                                    className='border w-full h-12 placeholder:text-white mt-12 shadow-lg p-2 bg-transparent text-gray-300 rounded-md'
                                     value={values.email}
                                     onChange={handleChange}
                                 />
                                 {
                                     errors.email && touched.email && (
-                                        <div className='text-red-500 text-sm p-2'>{errors.email}</div>
+                                        <div className='text-black text-sm p-2'>{errors.email}</div>
                                     )
                                 }
 
@@ -84,14 +84,14 @@ function LoginPage() {
                                     id='password'
                                     type="password"
                                     placeholder='Şifre...'
-                                    className='border w-full h-12 mt-6 shadow-lg p-2 bg-transparent rounded-md text-gray-300'
+                                    className='border w-full h-12 mt-6 placeholder:text-white shadow-lg p-2 bg-transparent rounded-md text-gray-300'
                                     value={values.password}
                                     onChange={handleChange}
 
                                 />
                                 {
                                     errors.password && touched.password && (
-                                        <div className='text-red-500 text-sm p-2'>{errors.password}</div>
+                                        <div className='text-black text-sm p-2'>{errors.password}</div>
                                     )
                                 }
 
@@ -106,14 +106,14 @@ function LoginPage() {
                                             onChange={handleChange}
                                         />
                                         {/* text-sm items-center ml-1 text-gray-400 */}
-                                        <label htmlFor="agree" className="text-sm items-center ml-1 text-gray-400"> Oturum açık kalsın</label>
+                                        <label htmlFor="agree" className="text-sm placeholder:text-white items-center ml-1 text-gray-100"> Oturum açık kalsın</label>
                                     </div>
-                                    <a href="#" className='text-red-600 hover:underline text-sm'>Şifremi unuttum</a>
+                                    <a href="#" className='text-red-600 hover:underline text-sm font-semibold'>Şifremi unuttum</a>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className='w-full border border-gray-400 h-12 rounded-md mt-5 shadow-lg text-gray-400 cursor-pointer hover:bg-transparent hover:border-red-600 hover:text-red-600'
+                                    className='w-full border border-gray-100 h-12 rounded-md mt-5 shadow-lg text-gray-100 cursor-pointer hover:bg-transparent hover:border-red-600 hover:text-red-600'
                                     disabled={!dirty || isSubmitting}
 
                                 >{status ? "Kayıt Ol" : " Giriş Yap"}</button>
@@ -127,13 +127,13 @@ function LoginPage() {
 
                                 <div className={`${status ? "grid grid-flow-col items-center pt-10  text-lg" : 'grid grid-flow-col items-center  text-lg'}`}>
 
-                                    <span><hr /></span>  <span className='justify-center flex text-gray-400'>Veya</span> <span><hr /></span>
+                                    <span><hr /></span>  <span className='justify-center flex text-gray-100'>Veya</span> <span><hr /></span>
                                 </div>
 
 
-                                <a href='#' className='text-gray-400 rounded-md shadow-lg  border w-full h-12 m-2 mt-10 flex items-center justify-center gap-2 hover:border-red-600'><FcGoogle /><p> Google ile giriş yap</p></a>
+                                <a href='#' className='text-gray-100 rounded-md shadow-lg  border w-full h-12 m-2 mt-10 flex items-center justify-center gap-2 hover:border-red-600'><FcGoogle /><p> Google ile giriş yap</p></a>
 
-                                <a href='#' className='text-gray-400 rounded-md shadow-lg border w-full h-12 m-2 mt-4 flex items-center justify-center gap-2 hover:border-red-600'><BsApple /> <p>Apple ile giriş yap</p></a>
+                                <a href='#' className='text-gray-100 rounded-md shadow-lg border w-full h-12 m-2 mt-4 flex items-center justify-center gap-2 hover:border-red-600'><BsApple /> <p>Apple ile giriş yap</p></a>
 
 
 
@@ -141,7 +141,7 @@ function LoginPage() {
                                 <div className='text-xs p-3 px-4 text-gray-500'>
                                     <p>Google veya Apple kimliğinizle bir sonraki adıma geçmeniz halinde <a href="#" className='text-red-600 hover:underline'>Bireysel Hesap Sözleşmesi ve Ekleri</a>'ni kabul etmiş sayılırsınız.</p>
                                 </div>
-                                <div className={`${status ? "hidden": 'flex justify-center my-6 text-lg text-gray-400'}`}>
+                                <div className={`${status ? "hidden": 'flex justify-center my-6 text-lg text-gray-100'}`}>
                                     <p>QR kod ile mobil uygulamadan <a href="#" className='text-red-600 hover:underline'> giriş yap </a></p>
                                 </div>
                             </form>

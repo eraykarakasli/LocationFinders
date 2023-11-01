@@ -19,7 +19,7 @@ function NavLeft() {
      
       <a href='/' className='text-2xl divide-x flex items-center min-w-[350px]:text-md cursor-pointer' >
         <span className='text-red-600 px-2 font-semibold'><FaMapLocationDot /> </span>
-        <span className='text-gray-400 px-2'>LocationFinder</span>
+        <span className='text-white px-2'>LocationFinder</span>
       </a>
       <button onClick={handleTheme}>
         {!theme ? <MdOutlineDarkMode color='black' size={24} /> : <BsFillSunFill size={24} color='white' />}

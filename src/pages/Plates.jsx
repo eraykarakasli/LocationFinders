@@ -8,7 +8,7 @@ function Plates() {
 
     useEffect(() => {
         document.title = 'Araçlar - LocationFinder';
-      }, []);
+    }, []);
     return (
         <div className='h-auto min-h-screen '>
             <div className='text-white font-semibold flex gap-2 justify-center items-center bg-black bg-opacity-30 p-4 px-8'>
@@ -19,10 +19,12 @@ function Plates() {
                     user.map((plate, i) => (
 
                         <div key={i} className='relative flex items-center '>
-                            <button className='w-[100%] '><Plate plate={plate.plate} name={plate.name} phone={plate.phone} /></button>
-                            <a href={`/passengers/${plate.plate}`} className='w-[240px] absolute opacity-0 hover:opacity-100 sm:h-30 md:h-32 lg:h-28 xl:h-24 2xl:h-20 border-4 transform transition-transform hover:scale-105 my-3 max-w-[350px] border-black rounded-md  flex justify-center items-center font-bold'>
+                            <button className='w-[100%] '>
+                                <Plate plate={plate.plate} name={plate.name} phone={plate.phone} />
+                            </button>
+                            <a href={`/passengers/${plate.plate}`} className='w-[240px] absolute opacity-0 hover:opacity-100 h-24 md:h-32 lg:h-28 xl:h-24 2xl:h-20 border-4 transform transition-transform hover:scale-105 my-3 max-w-[350px] border-black rounded-md  flex justify-center items-center font-bold'>
                                 <div className='w-full flex h-full'>
-                                    <div className='bg-gray-200 rounded-md text-center  text-black h-auto w-[100%] min-w-fit flex justify-center items-center  font-extrabold gap-2 text-2xl'>
+                                    <div className='bg-gray-100 rounded-md text-center  text-black h-auto w-[100%] min-w-fit flex justify-center items-center  font-extrabold gap-2 text-2xl'>
                                         {plate.name}
                                     </div>
                                 </div>

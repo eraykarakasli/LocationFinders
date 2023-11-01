@@ -19,34 +19,38 @@ function Passenger() {
     while (thirdSeats.length < 8) {
         thirdSeats.push('Boş');
     }
-   // console.log(thirdSeats)
+    // console.log(thirdSeats)
 
-   useEffect(() => {
-    document.title = 'Yolcular - LocationFinder';
-  }, []);
+    useEffect(() => {
+        document.title = 'Yolcular - LocationFinder';
+    }, []);
 
     return (
-        <div className='h-screen w-[100%] '>
-            <div className='text-white text-3xl m-4 px-20 font-semibold grid grid-flow-col justify-between'>
-                <div className='min-w-[400px]'>
-                    <div className='py-6'>
-                        Yolcu Oturma Düzeni :
-                    </div>
-                    <div className='text-red-700'>
-                        Şoför İsim: <span className='text-gray-200'>{userData.name}</span>
-                    </div>
-                    <div className='text-red-700'>
-                        Şoför Tel. No:  <span className='text-gray-200'>{userData.phone}</span>
+        <div className='h-full w-[100%] '>
+            <div className='text-white text-3xl m-4 px-20 font-semibold grid grid-cols-1 lg:grid-cols-2 '>
+                <div className=' w-full  '>
+                    <div>
+                        <div className='py-6'>
+                            Yolcu Oturma Düzeni :
+                        </div>
+                        <div className='text-red-700'>
+                            Şoför İsim: <span className='text-gray-200'>{userData.name}</span>
+                        </div>
+                        <div className='text-red-700'>
+                            Şoför Tel. No:  <span className='text-gray-200'>{userData.phone}</span>
+                        </div>
                     </div>
 
                 </div>
-                <div className='mt-6 min-w-[250px] '>
-                    <span className=''>Plaka: </span>
-                   <div> <button className='w-[100%n]' ><Plate plate={id} /></button></div>
+                <div className='mt-6  w-full  flex justify-center'>
+                    <div>
+                        <span className=''>Plaka: </span>
+                        <div> <button className='w-[100%n]' ><Plate plate={id} /></button></div>
+                    </div>
                 </div>
 
             </div>
-            <div className='flex w-full justify-center'>
+            <div className='flex w-full justify-center mb-8'>
                 <div className='border rounded-t-3xl min-w-[240px] w-1/5  h-[750px] flex justify-between'>
                     <div className='p-2'>
                         <div className='text-white ml-2 '>

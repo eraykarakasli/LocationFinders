@@ -40,7 +40,7 @@ function FormContact() {
                         className='-mt-8 '
                     >
                         <div className=' text-xl font-bold pt-7 text-white'>BİZİMLE İLETİŞİME GEÇ</div>
-                        <p className='text-gray-400'>Merak ettiklerinizi, görüş ve önerilerinizi aşağıdaki formu doldurarak bize iletebilirsiniz.</p>
+                        <p className='text-gray-200'>Merak ettiklerinizi, görüş ve önerilerinizi aşağıdaki formu doldurarak bize iletebilirsiniz.</p>
 
                         <div className='flex gap-4 '>
                             <div className='w-1/2'>
@@ -48,13 +48,13 @@ function FormContact() {
                                     id='username'
                                     type="text"
                                     placeholder='Ad-Soyad *'
-                                    className='border border-gray-500 rounded-sm w-full   h-12 mt-12 bg-transparent shadow-lg p-2 '
+                                    className='border border-gray-100 rounded-sm w-full placeholder:text-white  h-12 mt-12 bg-transparent shadow-lg p-2 '
                                     value={values.username}
                                     onChange={handleChange}
                                 />
                                 {
                                     errors.username && touched.username && (
-                                        <div className='text-red-500 text-sm p-2 '>{errors.username}</div>
+                                        <div className='text-black text-sm p-2 '>{errors.username}</div>
                                     )
                                 }
                             </div>
@@ -65,13 +65,13 @@ function FormContact() {
                                     id='email'
                                     type="text"
                                     placeholder='E-mail *'
-                                    className='border border-gray-500 rounded-sm w-full  h-12 mt-12 bg-transparent shadow-lg p-2 '
+                                    className='border border-gray-100 rounded-sm w-full placeholder:text-white h-12 mt-12 bg-transparent shadow-lg p-2 '
                                     value={values.email}
                                     onChange={handleChange}
                                 />
                                 {
                                     errors.email && touched.email && (
-                                        <div className='text-red-500 text-sm p-2 '>{errors.email}</div>
+                                        <div className='text-black text-sm p-2 '>{errors.email}</div>
                                     )
                                 }
                             </div>
@@ -80,13 +80,13 @@ function FormContact() {
                             id='content'
                             type="text"
                             placeholder='Konu *'
-                            className='border border-gray-500 rounded-sm w-full h-12 mt-5 bg-transparent shadow-lg p-2 '
+                            className='border border-gray-100 rounded-sm placeholder:text-white w-full h-12 mt-5 bg-transparent shadow-lg p-2 '
                             value={values.content}
                             onChange={handleChange}
                         />
                         {
                             errors.content && touched.content && (
-                                <div className='text-red-500 text-sm p-2 '>{errors.content}</div>
+                                <div className='text-black text-sm p-2 '>{errors.content}</div>
                             )
                         }
 
@@ -94,13 +94,13 @@ function FormContact() {
                             id='message'
                             type="text"
                             placeholder='Mesaj *'
-                            className='border border-gray-500 placeholder: rounded-sm w-full h-[170px] mt-5 bg-transparent shadow-lg p-2 '
+                            className='border border-gray-100 placeholder:text-white rounded-sm w-full h-[170px] mt-5 bg-transparent shadow-lg p-2 '
                             value={values.message}
                             onChange={handleChange}
                         />
                          {
                             errors.message && touched.message && (
-                                <div className='text-red-500 text-sm p-2 '>{errors.message}</div>
+                                <div className='text-black text-sm p-2 '>{errors.message}</div>
                             )
                         }
 

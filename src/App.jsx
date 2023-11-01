@@ -21,7 +21,7 @@ function App() {
 
   return (
     
-    <div className={`${theme ? "bg-black" : "bg-white"}  min-h-screen h-full w-full `}>
+    <div className={`${theme ? "bg-gradient-to-r from-[#00ffdc] via-[#373744] to-[#1d5bbf]" : "bg-gradient-to-r from-[#833ab4] via-[#c28181] to-[#fcb045]  "}  min-h-screen h-full w-full `}>
 
       {/* <Navbar /> */}
       <NewBar />
